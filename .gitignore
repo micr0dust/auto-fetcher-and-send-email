@@ -1,0 +1,6 @@
+__pycache__
+.env
+recvier.py
+*.vbs
+*.bat
+checked_links
