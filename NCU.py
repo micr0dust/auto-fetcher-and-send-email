@@ -40,7 +40,7 @@ def fetch_news():
         links = announcement_scope.find_all('a', {'class': 'link'})
         for link in links:
             href = link.get('href')
-            title = "[爬蟲] "+link.get('title')
+            title = link.get('title')
             
             new_checked_items.add(href)
             if href in checked_items:
@@ -54,7 +54,7 @@ def fetch_news():
             # print("-" * 30)
             
             for recvier_email in recvier_emails:
-                send_email(fetch_content(link), recvier_email, title)
+                send_email(fetch_content(link), recvier_email, title, "中央爬蟲通知")
     else:
         print("未找到目標範圍")
 
